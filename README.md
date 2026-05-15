@@ -50,7 +50,7 @@ Configuration is done via environment variables. Copy `.env.example` to `.env` a
 | `INTERVAL` | `300` | Polling interval in seconds |
 | `LOG_LEVEL` | `info` | Logging level (debug, info, warn, error) |
 | `SELF_UPDATE` | `false` | Allow ouroboros to update itself |
-| `CLEANUP` | `false` | Remove old images after update |
+| `CLEANUP` | `true` | Remove old images after update |
 | `MONITOR` | `all` | Comma-separated list of containers to monitor |
 | `IGNORE` | `` | Comma-separated list of containers to ignore |
 | `LABEL_ENABLE` | `false` | Only update containers with `ouroboros.enable=true` label |
@@ -58,6 +58,8 @@ Configuration is done via environment variables. Copy `.env.example` to `.env` a
 | `REPO_PASS` | `` | Registry password |
 | `NOTIFIERS` | `` | Notification URLs (apprise format) |
 | `METRICS_PORT` | `8080` | Prometheus metrics port |
+
+> **Note:** I changed the `CLEANUP` default to `true` since old images just pile up and waste disk space otherwise.
 
 ## Notifications
 
