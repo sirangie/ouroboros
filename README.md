@@ -57,9 +57,11 @@ Configuration is done via environment variables. Copy `.env.example` to `.env` a
 | `REPO_USER` | `` | Registry username |
 | `REPO_PASS` | `` | Registry password |
 | `NOTIFIERS` | `` | Notification URLs (apprise format) |
-| `METRICS_PORT` | `8080` | Prometheus metrics port |
+| `METRICS_PORT` | `9090` | Prometheus metrics port |
 
 > **Note:** I changed the `CLEANUP` default to `true` since old images just pile up and waste disk space otherwise.
+
+> **Note:** I changed `METRICS_PORT` default to `9090` to match the standard Prometheus convention and avoid conflicts with other services I run on 8080.
 
 ## Notifications
 
@@ -72,7 +74,7 @@ Examples:
 
 ## Metrics
 
-Prometheus metrics are available at `http://localhost:8080/metrics` by default.
+Prometheus metrics are available at `http://localhost:9090/metrics` by default.
 
 Available metrics:
 - `ouroboros_containers_updated_total` - Total number of container updates
@@ -109,8 +111,4 @@ pytest tests/
 
 ## Contributing
 
-Pull requests are welcome! Please check existing issues before opening a new one.
-
-## License
-
-MIT
+Pull requests are welcome! Please check existing issues before opening a new on
